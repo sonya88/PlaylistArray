@@ -1,5 +1,7 @@
 package playlist;
 
+import java.util.Scanner;
+
 /*
  * TUGAS KELOMPOK 1
  * Nama :
@@ -16,28 +18,76 @@ package playlist;
 public class Main {
 
     public static void main(String[] args) {
-
+        // Inisialisasi
+        Scanner scanner = new Scanner(System.in);
         PlaylistArray playlist = new PlaylistArray();
+        int pilihan;
 
-        System.out.println("--- Kondisi Awal ---");
-        playlist.tampilkanSemuaLagu();
-        System.out.println();
+        // Perulangan menu utama menggunakan do-while
+        do {
+            // Menampilkan menu pilihan
+            System.out.println("=== MENU PLAYLIST MUSIK ===");
+            System.out.println("1. Tampilkan semua lagu");
+            System.out.println("2. Tambah lagu baru");
+            System.out.println("3. Hapus lagu berdasarkan judul");
+            System.out.println("4. Cari lagu berdasarkan judul");
+            System.out.println("5. Urutkan berdasarkan durasi");
+            System.out.println("6. Keluar");
+            System.out.print("Pilih menu: ");
+            pilihan = scanner.nextInt();
+            scanner.nextLine();
 
-        // 1. Test Insertion (Tambah Lagu)
-        System.out.println("--- Test Tambah Lagu ---");
-        playlist.tambahLagu(new Lagu("Komang", "Raim Laode", 3.42));
-        playlist.tambahLagu(new Lagu("Sial", "Mahalini", 4.03));
-        playlist.tampilkanSemuaLagu();
-        System.out.println();
+            // Pemilihan fitur berdasarkan input pengguna
+            switch (pilihan) {
+                case 1:
+                    // Fitur menampilkan semua lagu dalam playlist
+                    playlist.tampilkanSemuaLagu();
+                    break;
 
-        // 2. Test Deletion (Hapus Lagu di tengah untuk cek pergeseran)
-        System.out.println("--- Test Hapus Lagu (Yellow) ---");
-        playlist.hapusLagu("Yellow");
-        playlist.tampilkanSemuaLagu();
-        System.out.println();
-        
-        // 3. Test Hapus Lagu yang tidak ada
-        System.out.println("--- Test Hapus Lagu Tidak Valid ---");
-        playlist.hapusLagu("Hati-Hati di Jalan");
+                case 2:
+                    // Fitur menambahkan lagu baru ke playlist
+                    System.out.print("Masukkan judul lagu : ");
+                    String judul = scanner.nextLine();
+                    System.out.print("Masukkan artis : ");
+                    String artis = scanner.nextLine();
+                    System.out.print("Masukkan durasi (menit) : ");
+                    double durasi = scanner.nextDouble();
+
+                    playlist.tambahLagu(new Lagu(judul, artis, durasi));
+                    break;
+
+                case 3:
+                    // Fitur menghapus lagu berdasarkan judul
+                    System.out.print("Masukkan judul lagu yang ingin dihapus: ");
+                    String judulHapus = scanner.nextLine();
+
+                    playlist.hapusLagu(judulHapus);
+                    break;
+
+                case 4:
+                    // Fitur mencari lagu berdasarkan judul
+                    System.out.print("Masukkan judul lagu yang ingin dicari: ");
+                    String judulCari = scanner.nextLine();
+
+                    playlist.cariLagu(judulCari);
+                    break;
+
+                case 5:
+                    // Fitur mengurutkan lagu berdasarkan durasi
+                    break;
+
+                case 6:
+                    // Keluar dari program
+                    System.out.println("Keluar dari program. Terima kasih!");
+                    break;
+
+                default:
+                    System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+            }
+
+            System.out.println();
+        } while (pilihan != 6);
+
+        scanner.close();
     }
 }
