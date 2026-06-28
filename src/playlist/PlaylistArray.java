@@ -5,14 +5,6 @@ public class PlaylistArray {
     private Lagu[] playlist = new Lagu[10];
     private int jumlahLagu = 0;
 
-    // Constructor
-    // public PlaylistArray(){
-    //     playlist[0] = new Lagu("Berapa Kali Kita Akan Saling Memaafkan","Pamungkas",4.44);
-    //     playlist[1] = new Lagu("Kita Buat Menyenangkan","Bernadya",4.09);
-    //     playlist[2] = new Lagu("Yellow","Coldplay",4.10);
-    //     jumlahLagu = 3;
-    // }
-
     // Menampilkan semua lagu
     public void tampilkanSemuaLagu() {
         if(jumlahLagu == 0){
