@@ -20,6 +20,7 @@ public class PlaylistArray {
             System.out.println("Playlist kosong.");
             return;
         }
+        System.out.println("Daftar lagu saat ini:");
         for(int i = 0; i < jumlahLagu; i++){
             System.out.print((i + 1) + ". ");
             playlist[i].tampilkanInfo();
@@ -53,7 +54,7 @@ public class PlaylistArray {
         
         playlist[jumlahLagu] = laguBaru;
         jumlahLagu++;
-        System.out.println("Lagu \"" + laguBaru.getJudul() + "\" berhasil ditambahkan.");
+        System.out.println("Lagu \"" + laguBaru.getJudul() + "\" berhasil ditambahkan!");
     }
 
     // 3 & 4. Implementasi Deletion & Geser elemen agar tetap rapat
@@ -81,6 +82,6 @@ public class PlaylistArray {
 
         playlist[jumlahLagu - 1] = null; // Hapus referensi elemen terakhir
         jumlahLagu--; // Kurangi jumlah total lagu
-        System.out.println("Lagu \"" + judulHapus + "\" berhasil dihapus.");
+        System.out.println("Lagu \"" + judulHapus + "\" berhasil dihapus!");
     }
 }
