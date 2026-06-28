@@ -18,9 +18,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        // Inisialisasi
-        Scanner scanner = new Scanner(System.in);
-        PlaylistArray playlist = new PlaylistArray();
+        Scanner scanner = new Scanner(System.in); // Inisialisasi Scanner dan input dari User
+        PlaylistArray playlist = new PlaylistArray(); //Membuat Array untuk Playlist Lagu
         int pilihan;
 
         // Perulangan menu utama menggunakan do-while
@@ -33,9 +32,8 @@ public class Main {
             System.out.println("4. Cari lagu berdasarkan judul");
             System.out.println("5. Urutkan berdasarkan durasi");
             System.out.println("6. Keluar");
-            System.out.print("Pilih menu: ");
-            pilihan = scanner.nextInt();
-            scanner.nextLine();
+
+            pilihan = ScannerIdentifier.inputInt(scanner, "Pilih menu: ");
 
             // Pemilihan fitur berdasarkan input pengguna
             switch (pilihan) {
@@ -46,28 +44,23 @@ public class Main {
 
                 case 2:
                     // Fitur menambahkan lagu baru ke playlist
-                    System.out.print("Masukkan judul lagu : ");
-                    String judul = scanner.nextLine();
-                    System.out.print("Masukkan artis : ");
-                    String artis = scanner.nextLine();
-                    System.out.print("Masukkan durasi (menit) : ");
-                    double durasi = scanner.nextDouble();
+                    String judul = ScannerIdentifier.inputString(scanner, "Masukkan judul lagu : ");
+                    String artis = ScannerIdentifier.inputString(scanner, "Masukkan artis : ");
+                    double durasi = ScannerIdentifier.inputDouble(scanner, "Masukkan durasi (menit) : ");
 
                     playlist.tambahLagu(new Lagu(judul, artis, durasi));
                     break;
 
                 case 3:
                     // Fitur menghapus lagu berdasarkan judul
-                    System.out.print("Masukkan judul lagu yang ingin dihapus: ");
-                    String judulHapus = scanner.nextLine();
+                    String judulHapus = ScannerIdentifier.inputString(scanner, "Masukkan judul lagu yang ingin dihapus: ");
 
                     playlist.hapusLagu(judulHapus);
                     break;
 
                 case 4:
                     // Fitur mencari lagu berdasarkan judul
-                    System.out.print("Masukkan judul lagu yang ingin dicari: ");
-                    String judulCari = scanner.nextLine();
+                    String judulCari = ScannerIdentifier.inputString(scanner, "Masukkan judul lagu yang ingin dicari: ");
 
                     playlist.cariLagu(judulCari);
                     break;
