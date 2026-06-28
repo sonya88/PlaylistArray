@@ -78,16 +78,16 @@ public class PlaylistArray {
 
     // ======================== FITUR SORT BY DURASI (ASCENDING) ======================
     public void urutkanLaguDenganBubbleSort(){
-        System.out.println(""); //kasih space
+        System.out.println(""); // Kasih space
         tampilkanSemuaLagu();
 
         if(jumlahLagu != 0){
-            System.out.println(""); //Kasih space
+            System.out.println(""); // Kasih space
 
-            //Inisialisasi array baru untuk hasil sort 
+            // Inisialisasi array baru untuk hasil sort 
             Lagu[] sorted = new Lagu[jumlahLagu];
 
-            //Lakukan sorting dengan Bubble Sort
+            // Lakukan sorting dengan Bubble Sort
             // Copy data from original array
             for (int i = 0; i < jumlahLagu; i++) {
                 sorted[i] = playlist[i];
