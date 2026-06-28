@@ -7,6 +7,7 @@ public class Main {
         PlaylistArray playlist = new PlaylistArray();
 
         System.out.println("--- Kondisi Awal ---");
+        System.out.println("Test repo");
         playlist.tampilkanSemuaLagu();
         System.out.println();
 
