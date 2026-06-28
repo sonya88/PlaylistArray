@@ -1,5 +1,18 @@
 package playlist;
 
+/*
+ * TUGAS KELOMPOK 1
+ * Nama :
+ * 1. MUHAMMAD RIZAL MUTAQIEN - 2902795205
+ * 2. SONYA BR SINAGA - 2902763046
+ * 3. KEVIN HANDOKO - 2902770871
+ * 4. IHSAN MUHAMMAD IQBAL - 2902790545
+ * 5. MUHAMMAD ASHRAF MUTAWALLY - 2902787670
+ * 
+ * Kelas : LVCA - LEC
+ * COSC6025036 - Data Structures and Algorithm Analysis
+ */
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,7 +20,6 @@ public class Main {
         PlaylistArray playlist = new PlaylistArray();
 
         System.out.println("--- Kondisi Awal ---");
-        System.out.println("Test repo");
         playlist.tampilkanSemuaLagu();
         System.out.println();
 
