@@ -74,6 +74,7 @@ public class Main {
 
                 case 5:
                     // Fitur mengurutkan lagu berdasarkan durasi
+                    playlist.urutkanLaguDenganBubbleSort();
                     break;
 
                 case 6:

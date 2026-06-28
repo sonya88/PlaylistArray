@@ -12,13 +12,14 @@ public class PlaylistArray {
     //     playlist[2] = new Lagu("Yellow","Coldplay",4.10);
     //     jumlahLagu = 3;
     // }
-    
+
     // Menampilkan semua lagu
     public void tampilkanSemuaLagu() {
         if(jumlahLagu == 0){
             System.out.println("Playlist kosong.");
             return;
         }
+
         System.out.println("Daftar lagu saat ini:");
         for(int i = 0; i < jumlahLagu; i++){
             System.out.print((i + 1) + ". ");
@@ -37,6 +38,7 @@ public class PlaylistArray {
                 break;
             }
         }
+
         if(!ditemukan){
             System.out.println("Lagu \"" + judulCari + "\" tidak ditemukan.");
         }
@@ -82,5 +84,41 @@ public class PlaylistArray {
         playlist[jumlahLagu - 1] = null; // Hapus referensi elemen terakhir
         jumlahLagu--; // Kurangi jumlah total lagu
         System.out.println("Lagu \"" + judulHapus + "\" berhasil dihapus!");
+    }
+
+    // ======================== PACKAGE 5 - FITUR SORT BY DURASI (ASCENDING) ======================
+    public void urutkanLaguDenganBubbleSort(){
+        System.out.println(""); //kasih space
+        tampilkanSemuaLagu();
+
+        if(jumlahLagu != 0){
+            System.out.println(""); //Kasih space
+
+            //Inisialisasi array baru untuk hasil sort 
+            Lagu[] sorted = new Lagu[jumlahLagu];
+
+            //Lakukan sorting dengan Bubble Sort
+            // Copy data from original array
+            for (int i = 0; i < jumlahLagu; i++) {
+                sorted[i] = playlist[i];
+            }
+
+            // Bubble Sort
+            for (int i = 0; i < sorted.length - 1; i++) {
+                for (int j = 0; j < sorted.length - 1 - i; j++) {
+                    if (sorted[j].getDurasi() > sorted[j + 1].getDurasi()) {
+                        Lagu temp = sorted[j];
+                        sorted[j] = sorted[j + 1];
+                        sorted[j + 1] = temp;
+                    }
+                }
+            }
+
+            System.out.println("Daftar lagu setelah diurutkan dengan Bubble Sort (Durasi - Ascending)");
+            for(int i = 0; i < jumlahLagu; i++){
+                System.out.print((i + 1) + ". ");
+                sorted[i].tampilkanInfo();
+            }
+        }
     }
 }
