@@ -36,8 +36,6 @@ public class PlaylistArray {
         }
     }
 
-    // ==================== TAMBAHAN PACKAGE 3 ====================
-
     // 1 & 2. Implementasi Insertion & Cek apakah playlist penuh
     public void tambahLagu(Lagu laguBaru) {
         if (jumlahLagu >= playlist.length) {
@@ -78,7 +76,7 @@ public class PlaylistArray {
         System.out.println("Lagu \"" + judulHapus + "\" berhasil dihapus!");
     }
 
-    // ======================== PACKAGE 5 - FITUR SORT BY DURASI (ASCENDING) ======================
+    // ======================== FITUR SORT BY DURASI (ASCENDING) ======================
     public void urutkanLaguDenganBubbleSort(){
         System.out.println(""); //kasih space
         tampilkanSemuaLagu();
