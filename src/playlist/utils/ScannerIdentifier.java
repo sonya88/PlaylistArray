@@ -1,4 +1,4 @@
-package playlist;
+package playlist.utils;
 
 import java.util.Scanner;
 

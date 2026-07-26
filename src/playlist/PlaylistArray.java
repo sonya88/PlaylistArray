@@ -121,4 +121,12 @@ public class PlaylistArray {
             }
         }
     }
+
+    public Lagu[] getPlaylist() {
+        return playlist;
+    }
+
+    public int getJumlahLagu() {
+        return jumlahLagu;
+    }
 }
